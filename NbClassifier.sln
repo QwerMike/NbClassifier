@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NbClassifier.Model", "NbClassifier.Model\NbClassifier.Model.csproj", "{AB021BCB-E54A-4910-AB55-8FECED7F3BF4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NbClassifier.Web", "NbClassifier.Web\NbClassifier.Web.csproj", "{D1A5D7F6-E405-4796-A9D0-9E19185E26EB}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB021BCB-E54A-4910-AB55-8FECED7F3BF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB021BCB-E54A-4910-AB55-8FECED7F3BF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB021BCB-E54A-4910-AB55-8FECED7F3BF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB021BCB-E54A-4910-AB55-8FECED7F3BF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1A5D7F6-E405-4796-A9D0-9E19185E26EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1A5D7F6-E405-4796-A9D0-9E19185E26EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1A5D7F6-E405-4796-A9D0-9E19185E26EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1A5D7F6-E405-4796-A9D0-9E19185E26EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

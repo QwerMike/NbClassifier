@@ -5,13 +5,20 @@ namespace NbClassifier.Web.DAL.Entities
 {
     public class Review
     {
-        [Key]
-        public int Id { get; set; }
+        public Review()
+        {
+            this.Categories = new HashSet<Category>();
+        }
 
+        [Key]
+        public int ReviewId { get; set; }
+
+        [Required]
         public string Text { get; set; }
 
+        [Required]
         public string Language { get; set; }
 
-        public List<Category> Categories { get; set; }
+        public ICollection<Category> Categories { get; set; }
     }
 }
