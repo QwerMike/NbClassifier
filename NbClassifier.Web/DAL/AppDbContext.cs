@@ -17,5 +17,21 @@ namespace NbClassifier.Web.DAL
 
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Category> Categories { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ReviewCategory>()
+                .HasKey(_ => new { _.ReviewId, _.CategoryId });
+
+            modelBuilder.Entity<ReviewCategory>()
+                .HasOne(_ => _.Review)
+                .WithMany(_ => _.ReviewCategories)
+                .HasForeignKey(_ => _.ReviewId);
+
+            modelBuilder.Entity<ReviewCategory>()
+                .HasOne(_ => _.Category)
+                .WithMany(_ => _.ReviewCategories)
+                .HasForeignKey(_ => _.CategoryId);
+        }
     }
 }

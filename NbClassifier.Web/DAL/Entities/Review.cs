@@ -7,7 +7,7 @@ namespace NbClassifier.Web.DAL.Entities
     {
         public Review()
         {
-            this.Categories = new HashSet<Category>();
+            this.ReviewCategories = new HashSet<ReviewCategory>();
         }
 
         [Key]
@@ -19,6 +19,6 @@ namespace NbClassifier.Web.DAL.Entities
         [Required]
         public string Language { get; set; }
 
-        public ICollection<Category> Categories { get; set; }
+        public ICollection<ReviewCategory> ReviewCategories { get; set; }
     }
 }

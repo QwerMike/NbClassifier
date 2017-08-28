@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using NbClassifier.Web.DAL;
 
 namespace NbClassifier.Web.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        public ValuesController(AppDbContext context)
+        {
+            _context = context; 
+        }
+
+        private readonly AppDbContext _context;
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
@@ -20,7 +28,8 @@ namespace NbClassifier.Web.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value";
+            var l = _context.Reviews.ToList().Count;
+            return "value" + l;
         }
 
         // POST api/values
