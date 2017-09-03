@@ -12,7 +12,7 @@ namespace NbClassifier.Web.Controllers
     {
         public ValuesController(AppDbContext context)
         {
-            _context = context; 
+            _context = context;
         }
 
         private readonly AppDbContext _context;
@@ -28,8 +28,12 @@ namespace NbClassifier.Web.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            var l = _context.Reviews.ToList().Count;
-            return "value" + l;
+            var l = _context.Reviews
+                .Where(_ => _.ReviewId < 10)
+                .Select(_ => _.Text)
+                .ToList();
+
+            return string.Join(" ", l);
         }
 
         // POST api/values

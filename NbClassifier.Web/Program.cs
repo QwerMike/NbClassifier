@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using NbClassifier.Web;
+using System.IO;
 
 namespace AspNetCoreDotNetCore2._0App
 {
@@ -13,6 +14,7 @@ namespace AspNetCoreDotNetCore2._0App
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseStartup<Startup>()
                 .Build();
     }

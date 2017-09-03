@@ -17,7 +17,7 @@ namespace NbClassifier.Web.DAL.Entities
         public string Text { get; set; }
 
         [Required]
-        public string Language { get; set; }
+        public Language Language { get; set; }
 
         public ICollection<ReviewCategory> ReviewCategories { get; set; }
     }
