@@ -40,6 +40,8 @@ namespace NbClassifier.Web
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(builder =>
+                builder.WithOrigins("http://localhost:4200"));
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseMvc();
