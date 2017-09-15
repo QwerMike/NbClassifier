@@ -25,9 +25,7 @@ namespace NbClassifier.Web
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-
-            //services.AddSingleton()
-
+            
             services.AddMvc();
         }
 
@@ -39,9 +37,12 @@ namespace NbClassifier.Web
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseCors(builder =>
-                builder.WithOrigins("http://localhost:4200"));
+            
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseMvc();
