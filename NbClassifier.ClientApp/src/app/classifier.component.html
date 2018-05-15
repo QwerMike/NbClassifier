@@ -1,0 +1,32 @@
+<div class="w3-display-middle" style="width:65%">
+  <div id="Car" class="w3-container w3-white w3-padding-16">
+    <h3>Classify reviews</h3>
+    <textarea class="w3-input w3-border" 
+        [(ngModel)]="review" 
+        placeholder="Enter review" 
+        style="resize:vertical;max-height:300px">
+    </textarea>
+    <p>
+      <button class="w3-button w3-dark-grey" 
+          (click)="classifyReview()">
+        Classify
+      </button>
+    </p>
+  </div>
+</div>
+
+<div id="modalReviewCategory" class="w3-modal">
+  <div class="w3-modal-content w3-animate-top w3-card-4">
+    <header class="w3-container" [ngClass]="color"> 
+      <span onclick="document.getElementById('modalReviewCategory').style.display='none'" 
+      class="w3-button w3-display-topright">&times;</span>
+      <h2>{{reviewCategory}}</h2>
+    </header>
+    <div class="w3-container">
+      <p>{{review}}</p>
+    </div>
+    <footer class="w3-container" [ngClass]="color">
+      <p></p>
+    </footer>
+  </div>
+</div>
